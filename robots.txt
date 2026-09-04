@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ru.buhosleep.com/sitemap.xml

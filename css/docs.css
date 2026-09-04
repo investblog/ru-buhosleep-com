@@ -1,0 +1,80 @@
+/* ============================================================
+   BuhoSleep — Documentation pages (privacy, etc.)
+   ============================================================ */
+
+.docs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-2xl);
+}
+
+.docs-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-sm);
+}
+.docs-nav__home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+  font-weight: var(--fw-semibold);
+}
+.docs-nav__home:hover { color: var(--text); }
+.docs-nav__sep { color: var(--text-muted); }
+
+.docs-article {
+  max-width: 680px;
+  margin-bottom: var(--space-4xl);
+}
+.docs-article h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-md);
+}
+.docs-article h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-sm);
+}
+.docs-article p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: var(--lh-loose);
+}
+.docs-article ul {
+  color: var(--text-secondary);
+  padding-inline-start: 1.5rem;
+  margin-bottom: var(--space-md);
+}
+.docs-article li { margin-bottom: var(--space-sm); line-height: var(--lh-loose); }
+.docs-article code {
+  background: var(--bg-card);
+  padding: 0.15em 0.4em;
+  border-radius: var(--r-sm);
+  font-size: 0.9em;
+}
+.docs-article hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-2xl) 0;
+}
+
+.docs-lead {
+  font-size: var(--fs-md);
+  color: var(--text);
+  font-weight: var(--fw-normal);
+}
+
+.docs-links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}

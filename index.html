@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuhoSleep — менеджер сна и питания для Windows</title>
+  <meta name="description" content="Не даёт ПК уснуть, управляет планами электропитания и автоматизирует всё через триггеры. Полностью бесплатная утилита для Windows 10/11 — без рекламы и покупок.">
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ru.buhosleep.com/">
+  <meta property="og:title" content="BuhoSleep — менеджер сна и питания для Windows">
+  <meta property="og:description" content="Не даёт ПК уснуть, управляет планами питания и автоматизирует всё через триггеры. Полностью бесплатно.">
+  <meta property="og:image" content="https://ru.buhosleep.com/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="BuhoSleep — five owls, one per power mode">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ru.buhosleep.com/img/og.png">
+
+  <link rel="canonical" href="https://ru.buhosleep.com/">
+  <link rel="alternate" hreflang="en" href="https://buhosleep.com/">
+  <link rel="alternate" hreflang="ru" href="https://ru.buhosleep.com/">
+  <link rel="alternate" hreflang="de" href="https://buhosleep.com/de/">
+  <link rel="alternate" hreflang="fr" href="https://buhosleep.com/fr/">
+  <link rel="alternate" hreflang="es" href="https://buhosleep.com/es/">
+  <link rel="alternate" hreflang="it" href="https://buhosleep.com/it/">
+  <link rel="alternate" hreflang="pt-BR" href="https://buhosleep.com/pt-br/">
+  <link rel="alternate" hreflang="ja" href="https://buhosleep.com/ja/">
+  <link rel="alternate" hreflang="ko" href="https://buhosleep.com/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://buhosleep.com/zh-cn/">
+  <link rel="alternate" hreflang="pl" href="https://buhosleep.com/pl/">
+  <link rel="alternate" hreflang="tr" href="https://buhosleep.com/tr/">
+  <link rel="alternate" hreflang="x-default" href="https://buhosleep.com/">
+  <meta name="yandex-verification" content="704ea2ebb80101af">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/theme.css?v=03a3ea06">
+  <link rel="stylesheet" href="/css/landing.css?v=086c4d31">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BuhoSleep",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "description": "Free — all features included" },
+    "description": "Менеджер сна и питания для Windows. Не даёт ПК уснуть, переключает планы электропитания и автоматизирует режимы через триггеры. Все функции бесплатны.",
+    "url": "https://ru.buhosleep.com/",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "301.st", "url": "https://301.st" },
+    "downloadUrl": "https://apps.microsoft.com/detail/9PFHWNS1FP82"
+  }
+  </script>
+
+  <!-- JSON-LD: Buho, the portable little brother (zips hosted on this site, /dl/) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Buho",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "softwareVersion": "1.0.1",
+    "fileSize": "1.2 MB",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "description": "Buho — простая портативная утилита «не дать уснуть» для Windows: пять режимов питания, таймер, глобальные хоткеи, 12 языков. Один exe, настройки в buho.ini, ничего не пишет за пределами своей папки. Бесплатно навсегда.",
+    "url": "https://ru.buhosleep.com/#portable",
+    "inLanguage": "ru",
+    "author": { "@type": "Organization", "name": "301.st", "url": "https://301.st" },
+    "downloadUrl": "https://ru.buhosleep.com/dl/buho-1.0.1-win64.zip",
+    "installUrl": "https://apps.microsoft.com/detail/9PMQL02MHMN0"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQ rich results (built by gen-i18n from the same strings as the visible section) -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"В Windows уже есть настройки питания. Зачем мне BuhoSleep?","acceptedAnswer":{"@type":"Answer","text":"Настройки Windows — это глобальные значения по умолчанию, спрятанные глубоко в меню: изменил — и ПК ведёт себя так всегда, пока не вспомнишь вернуть обратно. BuhoSleep — ситуативный: один клик держит ПК бодрым ради этой загрузки или этой презентации, таймер или триггер завершает режим, и обычные настройки возвращаются сами. Ваши значения по умолчанию вообще не трогаются."}},{"@type":"Question","name":"Что он умеет такого, чего не умеет сама Windows?","acceptedAnswer":{"@type":"Answer","text":"Автоматизацию. В Windows нет способа менять поведение питания, когда запущено конкретное приложение, выросла нагрузка на CPU, батарея пересекла порог, по недельному расписанию или при подключении адаптера — триггеры BuhoSleep делают ровно это. Сверху: таймеры сессий, переключение планов питания в один клик из трея, глобальные хоткеи, статистика бодрствования и Drive Alive для внешних дисков."}},{"@type":"Question","name":"А просто поставить «Сон: никогда» нельзя?","acceptedAnswer":{"@type":"Answer","text":"Можно — и тогда ПК не спит никогда: ночью, от батареи, пока вас нет. BuhoSleep держит машину бодрой только пока это реально нужно — на сессию, на таймер или пока выполняется условие триггера, — а потом всё возвращается само."}},{"@type":"Question","name":"Чем это отличается от PowerToys Awake, Don't Sleep и утилит типа Caffeine?","acceptedAnswer":{"@type":"Answer","text":"Они решают одну задачу: не дать ПК уснуть. BuhoSleep закрывает весь цикл работы с питанием: два режима бодрствования, переключение планов Windows с режимом Auto, триггеры, таймеры с пресетом «до конца дня», глобальные хоткеи, статистика сессий и Drive Alive — в одном маленьком трей-приложении."}},{"@type":"Question","name":"Он меняет что-то в системе насовсем?","acceptedAnswer":{"@type":"Answer","text":"Нет. Когда режим завершается или вы выходите из приложения, прежний план питания восстанавливается. Даже если приложение или ПК завершились аварийно, восстановление после сбоя вернёт исходный план при следующем запуске."}},{"@type":"Question","name":"Правда полностью бесплатно? В чём подвох?","acceptedAnswer":{"@type":"Answer","text":"Подвоха нет. Триггеры, статистика, Drive Alive, хоткеи — всё бесплатно, без рекламы, подписок, покупок и телеметрии. Если BuhoSleep вам помог, лучшее спасибо — пять звёзд в Store."}},{"@type":"Question","name":"Есть ли портативная версия?","acceptedAnswer":{"@type":"Answer","text":"Да — Buho, младший брат. Распаковали, запустили buho.exe, готово: настройки остаются в buho.ini рядом с exe, реестр и профиль не затрагиваются. Это ядро «не дать уснуть» (пять режимов, таймер, хоткеи, 12 языков) в 1,3 МБ. Сам BuhoSleep — с триггерами и статистикой — распространяется через Microsoft Store."}}]}</script>
+
+  <!-- Sync theme (no flash) -->
+  <script src="/js/theme-standalone.js?v=8c007e5f"></script>
+
+  <!-- Entry point -->
+  <script type="module" crossorigin src="/assets/main-Cax0TG-X.js"></script>
+</head>
+<body>
+
+<!-- SVG Sprite -->
+<svg xmlns="http://www.w3.org/2000/svg" hidden>
+  <symbol id="i-owl" viewBox="0 0 112 112">
+    <path d="M101.566 49.439a22.98 22.98 0 0 0-10.61-13.9 25 25 0 0 0-19.13-2.59c-7.91 2.15-12.17 6.47-16.08 13.28-3.41-6.69-8.93-11.47-16.27-13.43a24.2 24.2 0 0 0-18.54 2.69c-10.77 6.33-14.69 20.11-8.05 30.83 3.28 5.24 8.51 8.96 14.53 10.35 7.74 1.73 13.88.12 20.37-4.05 2.84-2.99 5.89-7.18 8.31-9.62 1.31 1.19 7.74 8.35 8.34 9.69 4.4 4.44 14.06 5.46 20.02 4.02 11.86-2.88 20.32-14.9 17.1-27.26zm-65.06 23.35c-10.02 1.88-19.69-4.71-21.58-14.74-1.9-10.02 4.69-19.69 14.71-21.6 10.04-1.92 19.73 4.68 21.64 14.72 1.9 10.05-4.71 19.73-14.76 21.62zm45.16.09c-10.06 1.75-19.65-4.96-21.44-15.01-1.79-10.06 4.87-19.67 14.92-21.51 10.11-1.85 19.79 4.87 21.6 14.99 1.8 10.11-4.96 19.76-15.08 21.53" fill="#fff"/>
+    <path d="M91.677 54.589c-1.41.03-2.81.05-4.21.04-.93-4.58-2.02-6.16-6.68-7.75-.12-1.7-.14-3.03-.14-4.74 6.79 1.07 10.72 5.65 11.03 12.45" fill="#f0efee"/>
+    <path d="M103.776 41.62c-2.54-4.59-5.53-7.16-9.75-10.1 6.13-4.87 11.31-12.03 9.69-20.41-.11-.58-.47-.79-.93-1.03-2 .13-4.59 2.74-6.44 3.76-5.3 2.91-10.58 3.63-16.4 4.7-6.56 1.19-13.82 3.06-19.09 7.31-1.47 1.19-2.78 2.56-4.29 3.72l-.21.15c-.68-.48-1.81-1.43-2.41-1.98-10.24-9.59-23.58-8.2-35.87-12.15-3.03-.97-6.47-4.36-9.44-5.54-1.13-.45-1.2 4.18-1.05 4.79.43 7.44 4.47 11.94 9.77 16.67-6.02 4.9-9.7 8.51-11.79 16.38a26.75 26.75 0 0 0 2.93 20.74 27.68 27.68 0 0 0 17.21 12.83c8.69 2.23 16.81.45 24.4-4.04.08.15.18.33.28.51s.21.37.31.57c.06.1.12.2.17.31.17.32.35.65.54 1 .7 1.29 1.5 2.76 2.27 4.14.14.25.28.5.42.74.76 1.33 1.47 2.52 1.99 3.27 2.16-2.54 4.36-7.22 5.92-10.31 6.09 4.01 14.74 5.53 21.89 4.29a28.26 28.26 0 0 0 18.43-11.72c6.13-8.77 6.64-19.23 1.44-28.59zm-19.3 35.08c-5.95 1.44-15.62.42-20.02-4.01-.6-1.34-7.03-8.51-8.34-9.69-2.43 2.45-5.47 6.63-8.31 9.62-6.49 4.18-12.63 5.78-20.37 4.05a23.34 23.34 0 0 1-14.53-10.35c-6.64-10.72-2.72-24.5 8.05-30.83a24.27 24.27 0 0 1 18.54-2.69c7.33 1.96 12.86 6.74 16.27 13.43 3.91-6.81 8.17-11.13 16.08-13.28a25.02 25.02 0 0 1 19.13 2.59c5.23 3.05 9.04 8.05 10.61 13.9 3.22 12.35-5.24 24.38-17.1 27.26z" fill="#f0efee"/>
+    <path d="M102.336 70.21a28.3 28.3 0 0 1-18.43 11.72c-7.15 1.25-15.8-.28-21.89-4.29.45-.86.86-1.65 1.27-2.46.2-.4.4-.81.59-1.22s.39-.84.59-1.28c4.4 4.44 14.06 5.46 20.02 4.02 11.86-2.88 20.32-14.9 17.1-27.26a22.98 22.98 0 0 0-10.61-13.9 25 25 0 0 0-19.13-2.59c-7.91 2.15-12.17 6.47-16.08 13.28-3.41-6.69-8.93-11.47-16.27-13.43a24.2 24.2 0 0 0-18.54 2.69c-10.77 6.33-14.69 20.11-8.05 30.83 3.28 5.24 8.51 8.96 14.53 10.35 7.74 1.73 13.88.12 20.37-4.05.66 1.35 1.79 3.46 2.31 4.8-7.59 4.49-15.7 6.27-24.4 4.04a27.68 27.68 0 0 1-17.21-12.83 26.75 26.75 0 0 1-2.93-20.74c2.09-7.87 5.78-11.48 11.79-16.38-5.3-4.72-9.35-9.22-9.77-16.67-.15-.61-.08-5.24 1.05-4.79 2.96 1.18 6.4 4.57 9.44 5.54 12.29 3.95 25.62 2.56 35.87 12.15.59.55 1.72 1.5 2.41 1.98l.21-.15c1.52-1.16 2.82-2.52 4.29-3.72 5.27-4.25 12.52-6.12 19.09-7.31 5.82-1.07 11.1-1.79 16.4-4.7 1.85-1.01 4.43-3.63 6.44-3.76.46.25.82.45.93 1.03 1.61 8.38-3.56 15.54-9.69 20.41 4.22 2.94 7.21 5.51 9.75 10.1 5.2 9.35 4.69 19.82-1.44 28.59z" fill="#191819"/>
+    <path d="M64.457 72.68c-.2.45-.39.87-.59 1.28a84 84 0 0 1-1.86 3.68c-1.56 3.1-3.76 7.78-5.92 10.31-.52-.76-1.23-1.94-1.99-3.27-.14-.25-.28-.49-.42-.74-.77-1.37-1.57-2.85-2.27-4.14-.19-.35-.37-.68-.54-1-.05-.11-.11-.21-.17-.31-.1-.21-.21-.39-.31-.57s-.19-.35-.28-.51c-.52-1.34-1.65-3.45-2.31-4.8 2.84-2.99 5.89-7.18 8.31-9.62 1.31 1.19 7.74 8.35 8.34 9.69z" fill="#f2944c"/>
+    <path d="M96.747 51.35c-1.81-10.11-11.49-16.83-21.6-14.99-10.05 1.83-16.72 11.45-14.92 21.51 1.79 10.06 11.38 16.76 21.44 15.01 10.12-1.77 16.88-11.42 15.08-21.53m-9.28 3.28c-.93-4.58-2.02-6.16-6.68-7.75-.12-1.7-.14-3.03-.14-4.74 6.79 1.07 10.72 5.65 11.03 12.45-1.41.03-2.81.05-4.21.04" fill="currentColor"/>
+    <path d="M91.677 54.589c-1.41.03-2.81.05-4.21.04-.93-4.58-2.02-6.16-6.68-7.75-.12-1.7-.14-3.03-.14-4.74 6.79 1.07 10.72 5.65 11.03 12.45" fill="#191819"/>
+    <path d="M91.677 54.589c-1.41.03-2.81.05-4.21.04-.93-4.58-2.02-6.16-6.68-7.75-.12-1.7-.14-3.03-.14-4.74 6.79 1.07 10.72 5.65 11.03 12.45" fill="#fff"/>
+    <path d="M36.507 72.79c-10.02 1.88-19.69-4.71-21.58-14.74-1.9-10.02 4.69-19.69 14.71-21.6 10.04-1.92 19.73 4.68 21.64 14.72 1.9 10.05-4.71 19.73-14.76 21.62z" fill="currentColor"/>
+    <path d="M55.156 12.889c6.42-.18 13.94 1.53 19.78 4.15-6.93 1.77-12.62 4.19-18.09 8.86l-.28.21c-.67 0-1.93-1.04-2.51-1.54-5-4.3-10.37-5.82-16.65-7.28 5.34-3.06 11.71-4.06 17.76-4.4zm-9.04 81.86c5.27-.36 8.29 1.9 9.19 7.13h-6.09c-3.11.05-6.35.16-9.45.02-.81-.04.63-3.39.85-3.74 1.33-2.16 3.12-2.89 5.49-3.42zm17.911 0c3.89-.25 7.67 1.72 8.6 5.72l.34 1.4c-2.26.12-4.46.09-6.72.09q-4.665.045-9.33 0c1.14-4.4 2.4-6.2 7.12-7.21zM5.896 73.68c3.09-.03 1.97.37 3.06 3.32.37 1.01.73 1.83 1.3 2.75a18 18 0 0 0 5.4 5.63c1.83 1.22 4.45 2.08 1.52 4.16-.15 0-.31.01-.46.02-1.64.02-5.19-2.8-6.29-3.91-2.65-2.67-5.35-6.55-5.46-10.43-.02-.72.48-1.1.95-1.54zm98.661.209c.64.03 2.2.02 2.29.86.72 6.25-6.33 13.14-11.1 15.15-3.09-.81-2.4-3.19.14-4.07 2.84-.99 6.68-6.55 7.47-9.28.32-1.11.1-1.79 1.19-2.67z" fill="#191819"/>
+    <path d="M5.816 22.009c.94.52 1.18.91 1.72 1.86 1.72 3.02 3.75 5.08 6.38 7.31-1 .84-1.8 1.53-2.77 2.41-.81.76-1.58 1.5-2.42 2.25-1.86-3.41-4.85-10.1-2.91-13.82zm99.611.43c1.4.89.83 4.06.69 5.52-.26 2.66-1.94 5.8-3.3 8.09-.61-.6-1.37-1.41-1.99-1.96-.96-.82-1.89-1.66-2.94-2.35l-.29-.2.15-.11c4.41-3.32 4.87-5.05 7.69-8.98z" fill="#f2944c"/>
+  </symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3m6-3v3M9 20v3m6-3v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+  <symbol id="i-battery-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"/><path d="M23 13v-2"/><path d="M5 10v4"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+  <symbol id="i-keyboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/></symbol>
+  <symbol id="i-hard-drive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><path d="M6 16h.01M10 16h.01"/></symbol>
+  <symbol id="i-bar-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><path d="m1 1 22 22"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-wifi-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m1 1 22 22M16.72 11.06A10.94 10.94 0 0 1 19 12.55M5 12.55a10.94 10.94 0 0 1 5.17-2.39M10.71 5.05A16 16 0 0 1 22.56 9M1.42 9a15.91 15.91 0 0 1 4.7-2.88M8.53 16.11a6 6 0 0 1 6.95 0"/><path d="M12 20h.01"/></symbol>
+  <symbol id="i-server-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zm0 8h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2z"/><circle cx="6" cy="9" r="0.5" fill="currentColor"/><circle cx="6" cy="17" r="0.5" fill="currentColor"/></symbol>
+  <symbol id="i-tray" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></symbol>
+  <symbol id="i-windows" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5.5l7.5-1v7H3zm0 13l7.5 1v-7H3zm8.5 1.2L21.5 21V12.5h-10zm0-15.4v7.2h10V3z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+  <symbol id="i-usb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="13" rx="2"/><path d="M8 8V4h8v4M10 12h.01M14 12h.01"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path fill="currentColor" d="M2 3h20l-1 6H3L2 3zM3 11h4v10H3V11zm6 0h4v10H9V11zm6 0h4v10h-4V11zm6 0h1V9h-1v2z"/></symbol>
+</svg>
+
+<!-- ========================= NAV ========================= -->
+<nav class="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo" id="nav-owl">
+      <svg viewBox="0 0 112 112" width="28" height="28" class="nav__owl" id="owl-icon">
+        <use href="#i-owl"></use>
+      </svg>
+      BuhoSleep
+    </a>
+
+    <ul class="nav__links">
+      <li><a href="#modes">Режимы</a></li>
+      <li><a href="#features">Функции</a></li>
+      <li><a href="#free">Бесплатно</a></li>
+      <li><a href="#portable">Portable</a></li>
+      <li><a href="#faq">ЧАВО</a></li>
+      <li><a href="#privacy">Приватность</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <div class="lang-dd" id="lang-dd">
+        <button class="lang-dd__btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Language"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h513v114H0z"/><path fill="#0039a6" d="M0 114h513v114H0z"/><path fill="#d52b1e" d="M0 228h513v114H0z"/></svg></span>RU</button>
+        <div class="lang-dd__menu">
+        <a href="https://buhosleep.com/" class="lang-dd__item" hreflang="en"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><g fill="#FFF"><path d="M0 0h513v341.3H0V0z"/><path d="M311.7 230 513 341.3v-31.5L369.3 230h-57.6zM200.3 111.3 0 0v31.5l143.7 79.8h56.6z"/></g><g fill="#012169"><path d="M393.8 230 513 295.7V230H393.8zm-82.1 0L513 341.3v-31.5L369.3 230h-57.6zm146.9 111.3-147-81.7v81.7h147zM90.3 230 0 280.2V230h90.3zm110 14.2v97.2H25.5l174.8-97.2zM118.2 111.3 0 45.6v65.7h118.2zm82.1 0L0 0v31.5l143.7 79.8h56.6zM53.4 0l147 81.7V0h-147zM421.7 111.3 513 61.1v50.2h-91.3zm-110-14.2V0h174.9L311.7 97.1z"/></g><g fill="#c8102e"><path d="M288 0h-64v138.7H0v64h224v138.7h64V202.7h224v-64H288V0z"/><path d="M311.7 230 513 341.3v-31.5L369.3 230h-57.6zM143.7 230 0 309.9v31.5L200.3 230h-56.6zM200.3 111.3 0 0v31.5l143.7 79.8h56.6zM368.3 111.3 513 31.5V0L311.7 111.3h56.6z"/></g></svg></span>English</a>
+        <a href="/" class="lang-dd__item is-active" hreflang="ru"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h513v114H0z"/><path fill="#0039a6" d="M0 114h513v114H0z"/><path fill="#d52b1e" d="M0 228h513v114H0z"/></svg></span>Русский</a>
+        <a href="https://buhosleep.com/de/" class="lang-dd__item" hreflang="de"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#D80027" d="M0 0h513v342H0z"/><path d="M0 0h513v114H0z"/><path fill="#FFDA44" d="M0 228h513v114H0z"/></svg></span>Deutsch</a>
+        <a href="https://buhosleep.com/fr/" class="lang-dd__item" hreflang="fr"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h513v342H0z"/><path fill="#00318A" d="M0 0h171v342H0z"/><path fill="#D80027" d="M342 0h171v342H342z"/></svg></span>Français</a>
+        <a href="https://buhosleep.com/es/" class="lang-dd__item" hreflang="es"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.5 15"><path fill="#FFF" d="M0 0h22.5v15H0V0z"/><path fill="#D03433" d="M0 0h22.5v4H0V0zm0 11h22.5v4H0v-4z"/><path fill="#FBCA46" d="M0 4h22.5v7H0V4z"/><path fill="#FFF" d="M7.8 7h1v.5h-1V7z"/><path fill="#A41517" d="M7.2 8.5c0 .3.3.5.6.5s.6-.2.6-.5L8.5 7H7.1l.1 1.5zM6.6 7c0-.3.2-.5.4-.5h1.5c.3 0 .5.2.5.4V7l-.1 1.5c-.1.6-.5 1-1.1 1-.6 0-1-.4-1.1-1L6.6 7z"/><path fill="#A41517" d="M6.8 7.5h2V8h-.5l-.5 1-.5-1h-.5v-.5zM5.3 6h1v3.5h-1V6zm4 0h1v3.5h-1V6zm-2.5-.5c0-.3.2-.5.5-.5h1c.3 0 .5.2.5.5v.2c0 .2-.1.3-.3.3H7c-.1 0-.2-.1-.2-.2v-.3z"/></svg></span>Español</a>
+        <a href="https://buhosleep.com/it/" class="lang-dd__item" hreflang="it"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#F4F5F0" d="M342 0H0v341.3h512V0z"/><path fill="#008C45" d="M0 0h171v342H0z"/><path fill="#CD212A" d="M342 0h171v342H342z"/></svg></span>Italiano</a>
+        <a href="https://buhosleep.com/pt-br/" class="lang-dd__item" hreflang="pt-BR"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#009b3a" d="M0 0h513v342H0z"/><path fill="#fedf00" d="m256.5 19.3 204.9 151.4L256.5 322 50.6 170.7z"/><circle fill="#FFF" cx="256.5" cy="171" r="80.4"/><path fill="#002776" d="M215.9 165.7c-13.9 0-27.4 2.1-40.1 6 .6 43.9 36.3 79.3 80.3 79.3 27.2 0 51.3-13.6 65.8-34.3-24.9-31-63.2-51-106-51zM334.9 186c.9-5 1.5-10.1 1.5-15.4 0-44.4-36-80.4-80.4-80.4-33.1 0-61.5 20.1-73.9 48.6 10.9-2.2 22.1-3.4 33.6-3.4 46.8.1 89 19.5 119.2 50.6z"/></svg></span>Português (BR)</a>
+        <a href="https://buhosleep.com/ja/" class="lang-dd__item" hreflang="ja"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h512v342H0z"/><circle fill="#D80027" cx="256.5" cy="171" r="96"/></svg></span>日本語</a>
+        <a href="https://buhosleep.com/ko/" class="lang-dd__item" hreflang="ko"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h513v342H0z"/><g stroke="#000" stroke-width="14.25"><path d="M84.6 107.8 132 36.6m-29.7 83 47.4-71.1m-29.6 83 47.4-71.1M345.4 281.7l47.4-71.1m-29.6 82.9 47.4-71.1m-29.6 83 47.4-71.1M132 305.4l-47.4-71.1m65.2 59.2-47.4-71.1m65.2 59.3-47.4-71.1M392.8 131.5l-47.4-71.1m65.2 59.2-47.4-71.1m65.2 59.3L381 36.6"/></g><g stroke="#FFF" stroke-width="12.5"><path d="m357.3 238.2 59.3 39.5M117.2 263.9 135 252m222.3-148.2L378 90m17.8-11.9 17.8-11.9"/></g><circle fill="#CA163A" cx="256.5" cy="171" r="85.5"/><path fill="#0E4896" d="M185.3 123.6c-13.1 19.6-7.8 46.2 11.9 59.3s46.2 7.8 59.3-11.9 39.6-24.9 59.3-11.9c19.6 13.1 24.9 39.6 11.9 59.3-26.2 39.3-79.3 49.9-118.6 23.7s-49.9-79.3-23.8-118.5z"/></svg></span>한국어</a>
+        <a href="https://buhosleep.com/zh-cn/" class="lang-dd__item" hreflang="zh-Hans"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#D80027" d="M0 0h513v342H0z"/><g fill="#FFDA44"><path d="m226.8 239.2-9.7-15.6-17.9 4.4 11.9-14.1-9.7-15.6 17.1 6.9 11.8-14.1-1.3 18.4 17.1 6.9-17.9 4.4zM290.6 82l-10.1 15.4 11.6 14.3-17.7-4.8-10.1 15.5-1-18.4-17.7-4.8 17.2-6.6-1-18.4 11.6 14.3zM236.2 25.4l-2 18.3 16.8 7.6-18 3.8-2 18.3-9.2-16-17.9 3.8 12.3-13.7-9.2-15.9 16.8 7.5zM292.8 161.8l-14.9 10.9 5.8 17.5-14.9-10.8-14.9 11 5.6-17.6-14.9-10.7 18.4-.1 5.6-17.6 5.8 17.5zM115 46.3l17.3 53.5h56.2l-45.4 32.9 17.3 53.5-45.4-33-45.5 33 17.4-53.5-45.5-32.9h56.3z"/></g></svg></span>简体中文</a>
+        <a href="https://buhosleep.com/pl/" class="lang-dd__item" hreflang="pl"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#FFF" d="M0 0h513v342H0z"/><path fill="#dc143c" d="M0 171h513v171H0z"/></svg></span>Polski</a>
+        <a href="https://buhosleep.com/tr/" class="lang-dd__item" hreflang="tr"><span class="lang-dd__flag"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 513 342"><path fill="#E30A17" d="M0 0h513v342H0z"/><path fill="#FFF" d="M259.7 118.6c-13.1-9.5-29-14.6-45.3-14.5-40.8 0-73.8 30.8-73.8 68.9s33.1 68.9 73.8 68.9c17.1 0 32.9-5.4 45.3-14.5-30 38.6-85.7 45.6-124.3 15.5s-45.6-85.7-15.5-124.3 85.7-45.6 124.3-15.5c5.8 4.5 11 9.8 15.5 15.5zm39.9 65.8-18.1 21.9 1.2-28.4-26.4-10.4 27.3-7.6 1.8-28.3 15.6 23.7 27.5-7.1-17.5 22 15.3 23.9-26.7-9.7z"/></svg></span>Türkçe</a>
+        </div>
+      </div>
+
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="icon" id="theme-icon-light" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <svg class="icon" id="theme-icon-dark" hidden aria-hidden="true"><use href="#i-moon"></use></svg>
+      </button>
+
+      <button class="nav__mobile-toggle" type="button" id="mobile-toggle" aria-label="Menu">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="#modes">Режимы</a>
+      <a href="#features">Функции</a>
+      <a href="#free">Бесплатно</a>
+      <a href="#portable">Portable</a>
+      <a href="#faq">ЧАВО</a>
+      <a href="#privacy">Приватность</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ========================= HERO ========================= -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__badge">
+      <span class="badge">
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-windows"></use></svg>
+        Windows 10 / 11
+      </span>
+    </div>
+
+    <h1 class="text-display hero__title">Не дайте ПК уснуть.<br>Управляйте питанием.</h1>
+
+    <p class="text-lead hero__subtitle">Бесплатная утилита в трее: запрещает сон, переключает планы электропитания и автоматизирует всё через умные триггеры.</p>
+
+    <div class="hero__cta">
+      <a href="https://apps.microsoft.com/detail/9PFHWNS1FP82" class="btn btn--store" target="_blank" rel="noopener">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-windows"></use></svg>
+        Скачать в Microsoft Store
+      </a>
+    </div>
+
+    <div class="hero__meta">
+      <span>
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-zap"></use></svg>
+        100% бесплатно
+      </span>
+      <span>
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-shield"></use></svg>
+        Без телеметрии
+      </span>
+      <span>
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-tray"></use></svg>
+        Живёт в системном трее
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MODES ========================= -->
+<section class="section" id="modes">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="text-title">Шесть режимов питания в один клик</h2>
+      <p class="text-lead">Переключайтесь мгновенно из трея — или доверьте это триггерам.</p>
+    </div>
+
+    <div class="modes__grid">
+      <div class="mode-card" data-signal="off">
+        <div class="mode-card__header">
+          <div class="mode-card__icon">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-moon"></use></svg>
+          </div>
+          <div class="mode-card__name">Off</div>
+        </div>
+        <p class="mode-card__text">Стандартное поведение системы. BuhoSleep бездействует и не вмешивается в настройки сна и питания.</p>
+      </div>
+
+      <div class="mode-card" data-signal="presentation">
+        <div class="mode-card__header">
+          <div class="mode-card__icon">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-monitor"></use></svg>
+          </div>
+          <div class="mode-card__name">Keep Screen On</div>
+        </div>
+        <p class="mode-card__text">Запрещает и сон, и отключение экрана. Идеально для презентаций, видеозвонков и долгого чтения.</p>
+      </div>
+
+      <div class="mode-card" data-signal="background">
+        <div class="mode-card__header">
+          <div class="mode-card__icon">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-cpu"></use></svg>
+          </div>
+          <div class="mode-card__name">Keep PC Awake</div>
+        </div>
+        <p class="mode-card__text">Система не засыпает, но экран может гаснуть. Для загрузок, рендеров и резервного копирования.</p>
+      </div>
+
+      <div class="mode-card" data-signal="powersaver">
+        <div class="mode-card__header">
+          <div class="mode-card__icon">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-battery-low"></use></svg>
+          </div>
+          <div class="mode-card__name">Power Saver</div>
+        </div>
+        <p class="mode-card__text">Переключает Windows на план «Экономия энергии». Снижает частоту CPU и яркость ради времени работы от батареи.</p>
+      </div>
+
+      <div class="mode-card" data-signal="highperf">
+        <div class="mode-card__header">
+          <div class="mode-card__icon">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-zap"></use></svg>
+          </div>
+          <div class="mode-card__name">High Performance</div>
+        </div>
+        <p class="mode-card__text">Включает план «Высокая производительность». Максимальная частота CPU, без троттлинга и ограничений.</p>
+      </div>
+
+      <div class="mode-card" data-signal="background">
+        <div class="mode-card__header">
+          <div class="mode-card__icon">
+            <svg class="icon icon--lg" aria-hidden="true"><use href="#i-refresh"></use></svg>
+          </div>
+          <div class="mode-card__name">Auto</div>
+        </div>
+        <p class="mode-card__text">Работает сам: от сети — план «Сбалансированный», от батареи — «Экономия энергии». Настроил и забыл.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FEATURES ========================= -->
+<section class="section section--alt" id="features">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="text-title">Умные функции для продвинутых</h2>
+      <p class="text-lead">Больше, чем просто «не спать» — и всё это бесплатно.</p>
+    </div>
+
+    <div class="features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-settings"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Триггеры</h3>
+        <p class="feature-card__text">Автоматически включают режимы по запущенным приложениям, нагрузке CPU, уровню батареи, расписанию или адаптеру питания. Таймеры и расписания есть у всех — триггеры реагируют на то, что ПК делает на самом деле.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-keyboard"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Глобальные хоткеи</h3>
+        <p class="feature-card__text">Назначьте клавиши на любой режим и переключайте планы питания, не касаясь мыши.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-hard-drive"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Drive Alive</h3>
+        <p class="feature-card__text">Не даёт внешним USB-дискам останавливаться благодаря лёгким keepalive-записям. Никаких задержек на переподключение.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-bar-chart"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Статистика сессий</h3>
+        <p class="feature-card__text">Смотрите, сколько работал каждый режим. История сессий и экспорт данных в CSV для анализа.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-shield"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Восстановление после сбоя</h3>
+        <p class="feature-card__text">Если приложение завершилось аварийно, исходный план питания вернётся при следующем запуске. Ничего не «залипнет».</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-clock"></use></svg>
+        </div>
+        <h3 class="feature-card__title">Таймер сессии</h3>
+        <p class="feature-card__text">Держит ПК бодрым 30 минут, до 8 часов или до конца дня — потом всё выключится само.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FREE ========================= -->
+<section class="section" id="free">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="text-title">Бесплатно. Целиком.</h2>
+      <p class="text-lead">Все функции включены — без покупок, подписок и рекламы. Если BuhoSleep вам помог, лучшее спасибо — 5 звёзд в Store :)</p>
+    </div>
+
+    <div class="compare">
+      <table class="compare__table">
+        <thead>
+          <tr>
+            <th>Функция</th>
+            <th>Включено</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Все 6 режимов питания</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Умные триггеры (приложение, CPU, батарея, расписание, адаптер)</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Drive Alive (keepalive для USB)</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Глобальные горячие клавиши</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Статистика сессий и экспорт CSV</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Таймер сессии (включая «до конца дня»)</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Восстановление после сбоя</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Автозапуск с Windows</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="compare__footer">
+        <div class="compare__price">0 ₽</div>
+        <p class="compare__price-note">Бесплатно навсегда. Без подписок и встроенных покупок.</p>
+        <br>
+        <a href="https://apps.microsoft.com/detail/9PFHWNS1FP82" class="btn btn--store" target="_blank" rel="noopener">
+          <svg class="icon icon--lg" aria-hidden="true"><use href="#i-windows"></use></svg>
+          Скачать BuhoSleep
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PORTABLE (Buho, the little brother) ========================= -->
+<section class="section section--alt" id="portable">
+  <div class="container">
+    <div class="section__header">
+      <span class="badge portable__badge">
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-usb"></use></svg>
+        Portable · с флешки
+      </span>
+      <h2 class="text-title">Buho — портативный младший брат</h2>
+      <p class="text-lead">Нужно только «не дать уснуть», с флешки, без магазина и установщика? Это Buho: та же сова, одна задача, 1,3 МБ.</p>
+    </div>
+
+    <div class="portable">
+      <div class="portable__card">
+        <h3 class="portable__card-title">
+          <svg class="icon" aria-hidden="true"><use href="#i-owl"></use></svg>
+          Что внутри
+        </h3>
+        <ul class="portable__list">
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg><span>Keep Screen On, Keep PC Awake, Power Saver, High Performance, Off — плюс таймер до 8 часов или до конца дня</span></li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg><span>Глобальные хоткеи: Pause или Alt+` переключают режимы по кругу, Ctrl+Shift+Alt+S/A/P/H включают нужный сразу</span></li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg><span>12 языков, следует языку интерфейса Windows</span></li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg><span>Нативный код, без .NET и рантаймов: ~2,7 МБ на диске, ~20 МБ памяти, мгновенный запуск</span></li>
+          <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"></use></svg><span>Защита от сбоев: план питания восстанавливается даже после аварийного выключения</span></li>
+        </ul>
+
+        <h3 class="portable__card-title">
+          <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>
+          По-настоящему портативный
+        </h3>
+        <p class="portable__text">Распакуйте куда угодно и запустите buho.exe. Настройки живут в buho.ini рядом с exe — ничего в реестре, ничего в профиле, никаких временных файлов и сети. Перенесите папку на другой диск или ПК — настройки переедут вместе с ней.</p>
+      </div>
+
+      <div class="portable__card portable__dl">
+        <h3 class="portable__card-title">
+          <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+          Скачать
+        </h3>
+
+        <a href="/dl/buho-1.0.1-win64.zip" class="dl-btn" download>
+          <svg class="icon icon--lg dl-btn__icon" aria-hidden="true"><use href="#i-download"></use></svg>
+          <span class="dl-btn__name">Buho 1.0.1 — 64-бит</span>
+          <span class="dl-btn__meta">zip · 1.2 MB</span>
+        </a>
+        <a href="/dl/buho-1.0.1-win32.zip" class="dl-btn" download>
+          <svg class="icon icon--lg dl-btn__icon" aria-hidden="true"><use href="#i-download"></use></svg>
+          <span class="dl-btn__name">Buho 1.0.1 — 32-бит</span>
+          <span class="dl-btn__meta">zip · 1.1 MB</span>
+        </a>
+
+        <p class="dl-sha">SHA-256 (<a href="/dl/SHA256SUMS.txt">SHA256SUMS.txt</a>)<br>
+          <code>520652bb…c22140</code> 64-bit · <code>7e4a2d9d…56f09a</code> 32-bit</p>
+
+        <p class="portable__req">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-windows"></use></svg>
+          Windows 10 / 11 · бесплатно навсегда · без телеметрии
+        </p>
+
+        <ul class="portable__also">
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-store"></use></svg>
+            <span>Предпочитаете установку? Buho есть и в <a href="https://apps.microsoft.com/detail/9PMQL02MHMN0" target="_blank" rel="noopener">Microsoft Store <svg class="icon icon--sm" aria-hidden="true"><use href="#i-external"></use></svg></a></span>
+          </li>
+          <li>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-usb"></use></svg>
+            <span>Пакет в формате PortableApps.com: проходит тестирование, скоро появится в каталоге PortableApps.com</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="compare portable__cmp">
+      <h3 class="portable__cmp-title">Какая сова вам нужна?</h3>
+      <table class="compare__table compare__table--duo">
+        <thead>
+          <tr>
+            <th>Функция</th>
+            <th>Buho</th>
+            <th>BuhoSleep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Режимы питания</td>
+            <td>5</td>
+            <td>6, включая Auto</td>
+          </tr>
+          <tr>
+            <td>Таймер сессии (включая «до конца дня»)</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Глобальные горячие клавиши</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Восстановление после сбоя</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Умные триггеры (приложение, CPU, батарея, расписание, адаптер)</td>
+            <td><svg class="icon compare__cross"><use href="#i-minus"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Drive Alive (keepalive для USB)</td>
+            <td><svg class="icon compare__cross"><use href="#i-minus"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Статистика сессий и экспорт CSV</td>
+            <td><svg class="icon compare__cross"><use href="#i-minus"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Портативный zip (флешка, без установщика)</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+            <td><svg class="icon compare__cross"><use href="#i-minus"></use></svg></td>
+          </tr>
+          <tr>
+            <td>Microsoft Store</td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+            <td><svg class="icon compare__check"><use href="#i-check"></use></svg></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="compare__price-note portable__cmp-note">Обе бесплатны навсегда, без рекламы и телеметрии. Buho — ядро «не дать уснуть», BuhoSleep добавляет автоматизацию.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PRIVACY ========================= -->
+<section class="section" id="privacy">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="text-title">Приватность прежде всего</h2>
+      <p class="text-lead">BuhoSleep работает только на вашем устройстве. Ноль сбора данных.</p>
+    </div>
+
+    <div class="privacy__grid">
+      <div class="privacy__card">
+        <div class="privacy__icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg>
+        </div>
+        <span>Без аналитики и телеметрии</span>
+      </div>
+      <div class="privacy__card">
+        <div class="privacy__icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-wifi-off"></use></svg>
+        </div>
+        <span>Полностью офлайн</span>
+      </div>
+      <div class="privacy__card">
+        <div class="privacy__icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>
+        </div>
+        <span>Настройки хранятся только локально</span>
+      </div>
+      <div class="privacy__card">
+        <div class="privacy__icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-server-off"></use></svg>
+        </div>
+        <span>Никакие данные никуда не отправляются</span>
+      </div>
+      <div class="privacy__card">
+        <div class="privacy__icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+        </div>
+        <span>Без рекламы и встроенных покупок</span>
+      </div>
+      <div class="privacy__card">
+        <div class="privacy__icon">
+          <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+        </div>
+        <span>Без сторонних SDK</span>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: var(--space-xl);">
+      <a href="https://buhosleep.com/privacy" class="btn btn--ghost btn--sm">Полная политика конфиденциальности
+        <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ========================= FAQ ========================= -->
+<section class="section section--alt" id="faq">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="text-title">Частые вопросы</h2>
+      <p class="text-lead">Зачем менеджер питания, если в Windows и так есть настройки? Справедливый вопрос.</p>
+    </div>
+
+    <div class="faq">
+      <details class="faq__item">
+        <summary class="faq__q">В Windows уже есть настройки питания. Зачем мне BuhoSleep?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Настройки Windows — это глобальные значения по умолчанию, спрятанные глубоко в меню: изменил — и ПК ведёт себя так всегда, пока не вспомнишь вернуть обратно. BuhoSleep — ситуативный: один клик держит ПК бодрым ради этой загрузки или этой презентации, таймер или триггер завершает режим, и обычные настройки возвращаются сами. Ваши значения по умолчанию вообще не трогаются.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Что он умеет такого, чего не умеет сама Windows?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Автоматизацию. В Windows нет способа менять поведение питания, когда запущено конкретное приложение, выросла нагрузка на CPU, батарея пересекла порог, по недельному расписанию или при подключении адаптера — триггеры BuhoSleep делают ровно это. Сверху: таймеры сессий, переключение планов питания в один клик из трея, глобальные хоткеи, статистика бодрствования и Drive Alive для внешних дисков.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">А просто поставить «Сон: никогда» нельзя?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Можно — и тогда ПК не спит никогда: ночью, от батареи, пока вас нет. BuhoSleep держит машину бодрой только пока это реально нужно — на сессию, на таймер или пока выполняется условие триггера, — а потом всё возвращается само.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Чем это отличается от PowerToys Awake, Don't Sleep и утилит типа Caffeine?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Они решают одну задачу: не дать ПК уснуть. BuhoSleep закрывает весь цикл работы с питанием: два режима бодрствования, переключение планов Windows с режимом Auto, триггеры, таймеры с пресетом «до конца дня», глобальные хоткеи, статистика сессий и Drive Alive — в одном маленьком трей-приложении.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Он меняет что-то в системе насовсем?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Нет. Когда режим завершается или вы выходите из приложения, прежний план питания восстанавливается. Даже если приложение или ПК завершились аварийно, восстановление после сбоя вернёт исходный план при следующем запуске.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Правда полностью бесплатно? В чём подвох?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Подвоха нет. Триггеры, статистика, Drive Alive, хоткеи — всё бесплатно, без рекламы, подписок, покупок и телеметрии. Если BuhoSleep вам помог, лучшее спасибо — пять звёзд в Store.</p>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Есть ли портативная версия?<svg class="icon faq__chev" aria-hidden="true"><use href="#i-chevron"></use></svg></summary>
+        <p class="faq__a">Да — Buho, младший брат. Распаковали, запустили buho.exe, готово: настройки остаются в buho.ini рядом с exe, реестр и профиль не затрагиваются. Это ядро «не дать уснуть» (пять режимов, таймер, хоткеи, 12 языков) в 1,3 МБ. Сам BuhoSleep — с триггерами и статистикой — распространяется через Microsoft Store.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= BOTTOM CTA ========================= -->
+<section class="section bottom-cta">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="text-title">Возьмите питание ПК под контроль</h2>
+      <p class="text-lead">Скачайте BuhoSleep бесплатно. Без регистрации. Без телеметрии. Просто работает.</p>
+    </div>
+
+    <div class="hero__cta">
+      <a href="https://apps.microsoft.com/detail/9PFHWNS1FP82" class="btn btn--store" target="_blank" rel="noopener">
+        <svg class="icon icon--lg" aria-hidden="true"><use href="#i-windows"></use></svg>
+        Скачать в Microsoft Store
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__copy">&copy; 2026 BuhoSleep by <a href="https://301.st">301.st</a></p>
+    <ul class="footer__links">
+      <li><a href="https://buhosleep.com/privacy">Политика конфиденциальности</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
